@@ -29,6 +29,9 @@ Complex::Complex(double real, double imag)
 		re = real;
 		im = imag;
 }
+Complex::division(Complex a, Complex b){
+	return a;
+}
 
 Complex::multiply(Complex a, Complex b) {
   double r1 = Complex.get(re);
