@@ -62,7 +62,7 @@ double Complex::real(const Complex& x){
 
 Complex Complex::operator +(const Complex &num){
     double real1 = real(num) + re; // Add original and new real portion
-  double imag1 = real(num) + im; // Add imaginary and new imaginary portion
+  double imag1 = imag(num) + im; // Add imaginary and new imaginary portion
   Complex *finalcomplex = new Complex((real1),(imag1)); // Merge into complex number
   return *finalcomplex; //Return complex number
 }
@@ -72,7 +72,7 @@ Complex Complex::operator +(const Complex &num){
 
 Complex Complex::operator -(const Complex &num){
     double real1 = real(num) - re; // Subtract original and new real portion
-  double imag1 = real(num) - im; // Subtract imaginary and new imaginary portion
+  double imag1 = imag(num) - im; // Subtract imaginary and new imaginary portion
   Complex *finalcomplex = new Complex((real1),(imag1)); // Merge into complex number
   return *finalcomplex; //Return complex number
 }
@@ -80,7 +80,7 @@ Complex Complex::operator -(const Complex &num){
 //Magnitude Function
 
 double Complex::abs(const Complex num){
- double z =  sqrt((real(num))*(real(num)) + (real(num))*(real(num))); // calculate magnitude
+ double z =  sqrt((real(num))*(real(num)) + (imag(num))*(imag(num))); // calculate magnitude -> Square Root (Real Part Squared + Imaginary Part Squared)
   if(z<0){
     z=z*-1;
     // bootleg absolute value function (magnitude has to be positive)
@@ -91,6 +91,6 @@ double Complex::abs(const Complex num){
 // Angle Function
 
 double Complex::arg(const Complex num){
-  return atan((real(num)/real(num)));
+  return atan((imag(num)/real(num))); // calculate angle -> arctan(imaginary part / real part)
 }
 
