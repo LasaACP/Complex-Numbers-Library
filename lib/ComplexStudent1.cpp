@@ -34,3 +34,9 @@ Complex::division(Complex a, Complex b){
 }
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
+Complex operator +(const Complex &num){
+    double real1 = num.getReal() + re; // Add original and new real portion
+  double imag1 = num.getIm() + im; // Add imaginary and new imaginary portion
+  Complex finalcomplex = new Complex((real1),(imag1)); // Merge into complex number
+  return finalcomplex; //Return complex number
+}
