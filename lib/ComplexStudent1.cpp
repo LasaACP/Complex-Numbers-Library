@@ -18,19 +18,12 @@ Modified : Dec. 11th
 Complex::Complex() 
 {
   // Constructor code
-	private:
-		re = 0;
-		im = 0;
 }
-Complex::Complex(double real, double imag) 
-{
-  // Constructor code
-	private:
-		re = real;
-		im = imag;
-}
-Complex::division(Complex a, Complex b){
-	return a;
+Complex operator +(const Complex &num){
+    double real1 = num.getReal() + re; // Add original and new real portion
+  double imag1 = num.getIm() + im; // Add imaginary and new imaginary portion
+  Complex finalcomplex = new Complex((real1),(imag1)); // Merge into complex number
+  return finalcomplex; //Return complex number
 }
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
