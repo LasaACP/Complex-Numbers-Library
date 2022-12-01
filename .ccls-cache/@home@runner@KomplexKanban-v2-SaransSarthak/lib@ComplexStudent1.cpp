@@ -29,9 +29,8 @@ Complex::Complex(double real, double imag)
 		re = real;
 		im = imag;
 }
-Complex::division(Complex a, Complex b){
-	return a;
-}
+
+
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
 Complex operator +(const Complex &num){
