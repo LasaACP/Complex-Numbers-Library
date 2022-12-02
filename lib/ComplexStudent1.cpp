@@ -26,6 +26,8 @@ double abs(const Complex);
 double arg(const Complex);
 Complex operator +(const Complex &num);
 Complex operator -(const Complex &num);
+Complex operator *(const Complex &num);
+Complex operator /(const Complex &num);
 };
 Complex::Complex() 
 {
@@ -65,6 +67,17 @@ Complex Complex::operator +(const Complex &num){
   double imag1 = imag(num) + im; // Add imaginary and new imaginary portion
   Complex *finalcomplex = new Complex((real1),(imag1)); // Merge into complex number
   return *finalcomplex; //Return complex number
+}
+
+Complex Complex::operator *(const Complex &num) {
+  double real1 = real(num);
+  double imag1 = imag(num);
+  double newReal1 = real1 * re;
+  double newImag1 = (real1 * im) + (imag1 * re);
+  double newReal2 = imag1 * im * -1;
+  double newRealFinal = newReal1 + newReal2;
+  Complex *finalComplex = new Complex(newRealFinal, newImag1);
+  return *finalComplex;
 }
 
 
