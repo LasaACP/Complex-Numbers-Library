@@ -127,4 +127,12 @@ double Complex::arg(const Complex num){
   return atan((imag(num)/real(num))); // calculate angle -> arctan(imaginary part / real part)
 }
 
-// Division Function
+// Conjugate Function
+Complex* conjugate (Complex* num)
+{
+	double real1 = (real(num)); // Create conjugate real portion
+  	double imag1 = -1*(num->im); // Create conjugate imaginary portion
+	Complex *conjugate = new Complex((real1),(imag1)); // Make conjugate
+
+	return conjugate;
+}
