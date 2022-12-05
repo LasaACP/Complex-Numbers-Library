@@ -132,10 +132,10 @@ Complex::Complex(double real, double imag)
 		im = imag;
 }
 
-// ostream& Complex::operator << (ostream& out, Complex& c) {
-//   out << re << " + " << im << "i" << endl;
-//   return out;
-// }
+ ostream& operator << (ostream& out, const Complex& c) {
+  out << c.re << " + " << c.im << "i" << endl;
+  return out;
+ }
 
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -

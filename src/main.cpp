@@ -18,6 +18,7 @@ int main () {
  Complex* a = new Complex(5.0,6.0);
   Complex*b = new Complex(3, 4);
   Complex c = *a + *b;
+  cout << c << endl;
  //    std::cout << *a / *b << endl;
       
 

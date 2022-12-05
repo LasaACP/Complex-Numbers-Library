@@ -132,10 +132,10 @@ Complex::Complex(double real, double imag)
 		im = imag;
 }
 
-// ostream& Complex::operator << (ostream& out, Complex& c) {
-//   out << re << " + " << im << "i" << endl;
-//   return out;
-// }
+ ostream& operator << (ostream& out, const Complex& c) {
+  out << c.re << " + " << c.im << "i" << endl;
+  return out;
+ }
 
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
@@ -217,5 +217,4 @@ double Complex::abs(const Complex num){
 
 double Complex::arg(const Complex num){
   return atan((imag(num)/real(num))); // calculate angle -> arctan(imaginary part / real part)
-}
 }

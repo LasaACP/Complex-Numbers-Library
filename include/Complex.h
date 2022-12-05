@@ -24,13 +24,12 @@ Modified : _______
 using namespace std;
 
 class Complex{
-
-private:
+public:
   double re = 0;
   double im = 0;
-public:
 
-//friend ostream& operator << (ostream&, const Complex&);
+
+friend ostream& operator << (ostream&, const Complex&);
   Complex();
   Complex(double real, double imag);
   double imag(const Complex&);
