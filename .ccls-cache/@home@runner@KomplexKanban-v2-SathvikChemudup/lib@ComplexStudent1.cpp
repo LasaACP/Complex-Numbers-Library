@@ -10,8 +10,9 @@ Modified : Dec. 11th
 */
 
 #include <cmath>
-//#include "../include/Complex.h"     
-
+#include "../include/Complex.h"     
+#include <ostream>
+using namespace std;
 #define PI 3.1415926538979323846
 #define EULER 2.71828182845904523536
 
@@ -115,45 +116,45 @@ Modified : Dec. 11th
 
 // // Division Function
 
-class Complex {
-private:
-  int re = 0;
-int im = 0;
-public:
-Complex() 
+
+
+Complex::Complex() 
 {
   // Constructor code
 
 		re = 0;
 		im = 0;
 }
-Complex(double real, double imag) 
+Complex::Complex(double real, double imag) 
 {
   // Constructor code
 		re = real;
 		im = imag;
 }
 
-
+// ostream& Complex::operator << (ostream& out, Complex& c) {
+//   out << re << " + " << im << "i" << endl;
+//   return out;
+// }
 
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
 
 //Imaginary Part of Complex Num
 
- double imag(const Complex& x){
+ double Complex::imag(const Complex& x){
   return x.im;
 }
 
 //Real Part of Complex Num
 
-double real(const Complex& x){
+double Complex::real(const Complex& x){
   return x.re;
 }
 
 //Addition Operator Overload
 
-Complex operator +(const Complex &num){
+Complex Complex::operator +(const Complex &num){
     double real1 = real(num) + re; // Add original and new real portion
   double imag1 = imag(num) + im; // Add imaginary and new imaginary portion
   Complex *finalcomplex = new Complex((real1),(imag1)); // Merge into complex number
@@ -161,7 +162,7 @@ Complex operator +(const Complex &num){
 }
 
 //Multiplication Operator Overload
-Complex operator *(const Complex &num) {
+Complex Complex::operator *(const Complex &num) {
   double real1 = real(num);
   double imag1 = imag(num);
   double newReal1 = real1 * re; // multiply first terms of product
@@ -175,7 +176,7 @@ Complex operator *(const Complex &num) {
 
 //Subtraction Operator Overload
 
-Complex operator -(const Complex &num){
+Complex Complex::operator -(const Complex &num){
     double real1 = real(num) - re; // Subtract original and new real portion
   double imag1 = imag(num) - im; // Subtract imaginary and new imaginary portion
   Complex *finalcomplex = new Complex((real1),(imag1)); // Merge into complex number
@@ -184,7 +185,7 @@ Complex operator -(const Complex &num){
 
 //Division Operator Overload
 
-Complex operator /(const Complex &num){
+Complex Complex::operator /(const Complex &num){
     double real1 = real(num); // Create conjugate real portion
   	double imag1 = -1*imag(num); // Create conjugate imaginary portion
   Complex *oppconjugate = new Complex((real1),(-1*imag1)); // Create opposite conjugate imaginary portion
@@ -203,7 +204,7 @@ Complex operator /(const Complex &num){
 
 //Magnitude Function
 
-double abs(const Complex num){
+double Complex::abs(const Complex num){
  double z =  sqrt((real(num))*(real(num)) + (imag(num))*(imag(num))); // calculate magnitude -> Square Root (Real Part Squared + Imaginary Part Squared)
   if(z<0){
     z=z*-1;
@@ -214,7 +215,7 @@ double abs(const Complex num){
 
 // Angle Function
 
-double arg(const Complex num){
+double Complex::arg(const Complex num){
   return atan((imag(num)/real(num))); // calculate angle -> arctan(imaginary part / real part)
 }
 }
