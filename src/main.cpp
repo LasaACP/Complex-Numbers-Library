@@ -13,12 +13,21 @@ using namespace std;
 int main () {
 
   
-    std::cout << "Hello CompLASA Arithmetic Library" << std::endl;
+  cout << "Hello CompLASA Arithmetic Library" << endl;
 
- Complex* a = new Complex(5.0,6.0);
-  Complex*b = new Complex(3, 4);
+  Complex* a = new Complex(5.0,6.0);
+  Complex*b = new Complex(3.0, 4.0);
+  cout << "New Complex Number A: " << *a << endl;
+  cout << "New Complex Number B: " << *b << endl;
   Complex c = *a + *b;
-  cout << c << endl;
+  Complex d = *a - *b;
+  Complex e = *a * *b;
+  Complex f = *a / *b;
+  cout << "A + B: " << c << endl;
+  cout << "A - B: " << d << endl;
+  cout << "A * B: " << e << endl;
+  cout << "A / B: " << f << endl;
+  
  //    std::cout << *a / *b << endl;
       
 
