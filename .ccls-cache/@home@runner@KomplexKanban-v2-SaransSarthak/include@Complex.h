@@ -1,13 +1,13 @@
-/*Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-*/
+// Skip to content
+// Search or jump to…
+// Pull requests
+// Issues
+// Codespaces
+
 /*
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Title : Complex
-Author : Me
+Author : _________
 URL : NA
 Description : The complex class for complex numbers, and the functions that can be used upon them
 Created : _______
@@ -19,50 +19,67 @@ Modified : _______
 #define COMPLASA_H
 
 #include <iostream>
-//#include <complex>
+
 
 using namespace std;
 
-class Complex {
+class Complex{
+public:
+  double re = 0;
+  double im = 0;
 
-	private:
-		double re;
-		double im;
 
-    //----------------------------------------- OPERATOR OVERLOADS -----------------------------------------------------
+friend ostream& operator << (ostream&, const Complex&);
+  Complex();
+  Complex(double real, double imag);
+  double imag(const Complex&);
+  double real(const Complex&);
+  double abs(const Complex);
+  double arg(const Complex);
+  Complex operator +(const Complex &num);
+  Complex operator -(const Complex &num);
+  Complex operator *(const Complex &num);
+  Complex operator /(const Complex &num);
+}; 
+#endif
 
-    /**
-     * Returns the real part of comlpex number
-     * @param com The complex number to find the real part of
-     * @return complex.real
-     * @author ___________
-     */
-    friend double real(Complex);
-    /**
-     * Returns the imaginary part of complex number
-     * @param com The complex number to find the real part of
-     * @return complex.imaginary
-     * @author _________
-     */
-      friend double imag(Complex);
-  
-  
-  
-  
-  
-      //------------------------------------- ARITHMETIC LIBRARY FUNCTIONS -------------------------------------------
+// class Complex {
 
-    /**
-     * Returns the absolute value (sqrt(a^2+b^2)) of com
-     * @param com the complex number to find the absolute value of
-     * @return the absolute value of com
-     * @author ____________
-     */
-    friend double abs(Complex);
+//     //----------------------------------------- OPERATOR OVERLOADS -----------------------------------------------------
+
+//     /**
+//      * Returns the real part of comlpex number
+//      * @param com The complex number to find the real part of
+//      * @return complex.real
+//      * @author ___________
+//      */
+//     friend double real(Complex);
+//     /**
+//      * Returns the imaginary part of complex number
+//      * @param com The complex number to find the real part of
+//      * @return complex.imaginary
+//      * @author _________
+//      */
+//       friend double imag(Complex);
   
   
   
   
   
+//       //------------------------------------- ARITHMETIC LIBRARY FUNCTIONS -------------------------------------------
+
+//     /**
+//      * Returns the absolute value (sqrt(a^2+b^2)) of com
+//      * @param com the complex number to find the absolute value of
+//      * @return the absolute value of com
+//      * @author ____________
+//      */
+//     friend double abs(Complex);
+// friend int operator +(const Complex) const;
+
   
-}; // Complex class declaration
+  
+  
+  
+  
+// } // Complex class declaration
