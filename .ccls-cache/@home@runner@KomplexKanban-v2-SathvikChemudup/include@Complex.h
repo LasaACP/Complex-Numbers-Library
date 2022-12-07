@@ -30,6 +30,7 @@ public:
 
 
 friend ostream& operator << (ostream&, const Complex&);
+friend istream& operator >> (istream&, Complex&);
   Complex();
   Complex(double real, double imag);
   double imag(const Complex&);

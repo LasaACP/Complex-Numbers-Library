@@ -137,6 +137,12 @@ Complex::Complex(double real, double imag)
   return out;
  }
 
+istream& operator >> (istream&in, Complex& c) {
+  in >> c.re;
+  in >> c.im;
+  return in;
+}
+
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
 

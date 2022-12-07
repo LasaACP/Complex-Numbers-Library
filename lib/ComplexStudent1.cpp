@@ -137,6 +137,12 @@ Complex::Complex(double real, double imag)
   return out;
  }
 
+istream& operator >> (istream&in, Complex& c) {
+  in >> c.re;
+  in >> c.im;
+  return in;
+}
+
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
 
@@ -188,7 +194,7 @@ Complex Complex::operator -(const Complex &num){
 Complex Complex::operator /(const Complex &num){
     double real1 = real(num); // Create conjugate real portion
   	double imag1 = -1*imag(num); // Create conjugate imaginary portion
-  Complex *oppconjugate = new Complex((real1),(imag1)); // Create opposite conjugate imaginary portion
+  Complex *oppconjugate = new Complex((real1),(-1*imag1)); // Create opposite conjugate imaginary portion
 	Complex *conjugate = new Complex((real1),(imag1)); // Make conjugate
 	Complex *normals = new Complex(re,im); //Normal complex number
 
