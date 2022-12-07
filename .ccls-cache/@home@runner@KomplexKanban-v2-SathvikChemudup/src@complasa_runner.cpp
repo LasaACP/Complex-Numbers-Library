@@ -12,7 +12,6 @@ int main () {
     //std::cout << "Factorial test " << Factorial(5) << std::endl;
   
     Complex a(5.0,6.0),b;
-
     std::cout << "Enter b: ";
     std::cin >> b;
 
@@ -22,7 +21,7 @@ int main () {
     std::cout << "a + b = " << a + b << "\n";
     std::cout << "a * b = " << a * b << "\n";
     std::cout << "a / b = " << a / b << "\n";
-    // std::cout << "|a| = "   << abs(a) << "\n";
+    std::cout << "|a| = "   << a.abs(a) << "\n";
     // std::cout << "complex conjugate of a = " << conj(a) << "\n";
     // std::cout << "norm of a = " << norm(a) << "\n";
     // std::cout << "abs of a = " << abs(a) << "\n";

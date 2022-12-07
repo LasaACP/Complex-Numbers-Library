@@ -18,6 +18,7 @@ $(info HEADERS is $(HEADERS))
 
 main: $(SRCS) $(HEADERS)
 	$(CXX) $(CXXFLAGS) -I$(HEADERS) -I../include $(SRCS) ../lib/*.cpp -o "$@"
+	
 
 main-debug: $(SRCS) $(HEADERS)
 	$(CXX) $(CXXFLAGS) -I$(HEADERS) -O0 $(SRCS) -o "$@"
