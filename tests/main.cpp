@@ -31,16 +31,47 @@ TEST_CASE("Quick Catch2 test on Factorial", "[Factorial]")
 {
 
   cout << "Hello Catch2 Build with Catch2 main()\n";
-  cout << "Running tests on Factorial" << endl;
+  cout << "Running tests on Complex" << endl;
   // REQUIRE(Factorial(1) == 1);
   // REQUIRE(Factorial(2) == 2);
   // REQUIRE(Factorial(3) == 6);
   // REQUIRE(Factorial(4) == 24);
   // REQUIRE(Factorial(5) == 120);
   Complex a(5,12);
+	Complex b(3, 4);
   REQUIRE(a.abs(a)==13.0);
-  
+	REQUIRE(b.abs(b)==5.0);
 
+	
+	REQUIRE(((a + b).im == 16));
+	REQUIRE(((a + b).re == 8));
+	REQUIRE(((a - b).im == 8));
+	REQUIRE(((a - b).re == 2));
+	REQUIRE(((a * b).re == -33));
+	REQUIRE(((a * b).im == 56));
+	REQUIRE(((a / b).re == 63.0/25));
+	REQUIRE(((a / b).im == 16.0/25));
+	cout<<a.cosb(a).re<<endl;
+	REQUIRE(((a.cosb(a).re == 23083.69) ));
+	cout<<a.cosb(a).im<<endl;
+		REQUIRE(((a.cosb(a).im == 78034.76) ));
+
+
+	Complex c(-5,12);
+	Complex d(-3, 4);
+  REQUIRE(a.abs(a)==13.0);
+	REQUIRE(b.abs(b)==5.0);
+
+	
+	REQUIRE(((c + d).im == 16));
+	REQUIRE(((c + d).re == -8));
+	REQUIRE(((c - d).im == 8));
+	REQUIRE(((c - d).re == -2));
+	REQUIRE(((c * d).re == -33));
+	REQUIRE(((c * d).im == -56));
+	REQUIRE(((c / d).re == 63.0/25));
+	REQUIRE(((c / d).im == -16.0/25));
+	REQUIRE(c.arg(c)==-67.38);
 }
 // */
 #endif  //ifndef CATCH_AMALGAMATED_CUSTOM_MAIN

@@ -41,6 +41,15 @@ friend istream& operator >> (istream&, Complex&);
   Complex operator -(const Complex &num);
   Complex operator *(const Complex &num);
   Complex operator /(const Complex &num);
+  bool const operator ==(const Complex &num);
+Complex cosb(const Complex num);
+Complex acos(const Complex num);
+Complex coshb(const Complex num);
+Complex exp(const Complex num);
+Complex sinb(const Complex num);
+Complex sinhb(const Complex num);
+Complex tan(const Complex num);
+Complex tanh(const Complex num);
 }; 
 #endif
 

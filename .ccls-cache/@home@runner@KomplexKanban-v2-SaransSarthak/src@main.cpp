@@ -1,16 +1,37 @@
 #include <cstdlib>
 #include <iostream>
-#include "Complex.h"
+#include <fstream>
+#include <ostream>
+using namespace std;
+#include "../include/Complex.h"
 #include "fac.h"
-
+#include <cmath>
 #define PI 3.1415926538979323846
 #define EULER 2.71828182845904523536
-using namespace std;
 
-int main () {
-    std::cout << "Hello CompLASA Arithmetic Library" << std::endl;
 
-    std::cout << "Factorial test " << Factorial(5) << std::endl;
+// int main () {
+
+  
+//   cout << "Hello CompLASA Arithmetic Library" << endl;
+
+//   Complex* a = new Complex(5.0,6.0);
+//   Complex*b = new Complex(3.0, 4.0);
+//   cout << "New Complex Number A: " << *a << endl;
+//   cout << "New Complex Number B: " << *b << endl;
+//   Complex c = *a + *b;
+//   Complex d = *a - *b;
+//   Complex e = *a * *b;
+//   Complex f = *a / *b;
+//   cout << "A + B: " << c << endl;
+//   cout << "A - B: " << d << endl;
+//   cout << "A * B: " << e << endl;
+//   cout << "A / B: " << f << endl;
+  
+ //    std::cout << *a / *b << endl;
+      
+
+    //std::cout << "Factorial test " << Factorial(5) << std::endl;
 
 /*
    * * * * * * * * * * Required Functions * * * * * * * * * 
@@ -85,5 +106,5 @@ int main () {
     cout << "The acoth is: " << acoth(a) << "\n";
     cout << "The complex number rotated by pi/6 radians is: " << rotate(a, PI/6) << "\n";
   */
-}
+// }
  
