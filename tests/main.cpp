@@ -140,7 +140,24 @@ TEST_CASE("Quick Catch2 test on Factorial", "[Factorial]")
 	REQUIRE(((d.tan(d).im == 1) ));
 	REQUIRE(((d.tanh(d).re == -1) ));
 	REQUIRE(((d.tanh(d).im == 0) ));
-  
+
+	Complex e(-15, -8);
+	cout << e.tanh(e).re << endl;
+    
+	REQUIRE(((e.cosb(e).re == -1132.3)));
+	REQUIRE(((e.cosb(e).im == -969.2)));
+	REQUIRE(((e.sinb(e).re == -969.2) ));
+	REQUIRE(((e.sinb(e).im == 1132.3) ));
+	REQUIRE(((e.sinhb(e).re == (237821.1)) ));
+	REQUIRE(((e.sinhb(e).im == -1617114.6) ));
+    REQUIRE(((e.coshb(e).re == (-237821.1)) ));
+	REQUIRE(((e.coshb(e).im == 1617114.6) ));
+	REQUIRE(((e.tan(e).re == (0)) ));
+	REQUIRE(((e.tan(e).im == -1) ));
+	REQUIRE(((e.tanh(e).re == -1) ));
+	REQUIRE(((e.tanh(e).im == 0) ));
+	
+
 }
 // */
 #endif  //ifndef CATCH_AMALGAMATED_CUSTOM_MAIN

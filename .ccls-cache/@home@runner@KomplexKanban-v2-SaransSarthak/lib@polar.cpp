@@ -44,8 +44,8 @@ Complex Complex::cosb(const Complex num){
 Complex Complex::coshb(const Complex num){
   double realNum = real(num);
   double imagNum = imag(num);
-  double finalNum = floor(cosh(realNum) * cos(imagNum)+0.5)/1;
-  double secondFinalNum = floor(sinh(realNum) * sin(imagNum)+0.5)/1;
+  double finalNum = floor((cosh(realNum) * cos(imagNum)*10)+0.5)/10;
+  double secondFinalNum = floor((sinh(realNum) * sin(imagNum)*10)+0.5)/10;
   Complex *finishedCosh = new Complex(finalNum, secondFinalNum);
   return *finishedCosh;
  

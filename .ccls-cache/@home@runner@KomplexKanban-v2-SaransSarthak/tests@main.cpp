@@ -61,28 +61,32 @@ TEST_CASE("Quick Catch2 test on Factorial", "[Factorial]")
 
 	REQUIRE(((a.sinhb(a).re == (62.6)) ));
 	REQUIRE(((a.sinhb(a).im == -39.8) ));
+
+
+  REQUIRE(((a.coshb(a).re == (62.6)) ));
+	REQUIRE(((a.coshb(a).im == -39.8) ));
 	REQUIRE(((a.tan(a).re == (0)) ));
 	REQUIRE(((a.tan(a).im == 1) ));
 	REQUIRE(((a.tanh(a).re == 1) ));
 	REQUIRE(((a.tanh(a).im == 0) ));
 
 	//make b
-	cout << b.cosb(b).re << endl;
-	REQUIRE(((b.cosb(b).re == -80563.0) ));
-	REQUIRE(((b.cosb(b).im == -11484.0) ));
 
-	REQUIRE(((b.sinb(b).re == 11484.0) ));
-	REQUIRE(((b.sinb(b).im == -80563.0) ));
+	REQUIRE(((b.cosb(b).re == -27) ));
+	REQUIRE(((b.cosb(b).im == -3.9) ));
+
+	REQUIRE(((b.sinb(b).re == 3.9) ));
+	REQUIRE(((b.sinb(b).im == -27) ));
 	
-
-	REQUIRE(((b.sinhb(b).re == (8.5)) ));
-	REQUIRE(((b.sinhb(b).im == -5.4) ));
+	REQUIRE(((b.sinhb(b).re == (-6.5)) ));
+	REQUIRE(((b.sinhb(b).im == -7.6) ));
+  REQUIRE(((b.coshb(b).re == (-6.6)) ));
+	REQUIRE(((b.coshb(b).im == -7.6) ));
 	REQUIRE(((b.tan(b).re == (0)) ));
 	REQUIRE(((b.tan(b).im == 1) ));
-	/**REQUIRE(((b.tanh(b).re == 1) ));
+	REQUIRE(((b.tanh(b).re == 1) ));
 	REQUIRE(((b.tanh(b).im == 0) ));
 	
-**/
 
 
 	Complex c(-5,12);
@@ -100,6 +104,60 @@ TEST_CASE("Quick Catch2 test on Factorial", "[Factorial]")
 	REQUIRE(((c / d).re == 63.0/25));
 	REQUIRE(((c / d).im == -16.0/25));
 	REQUIRE(c.arg(c)==-67.38);
+
+
+  //test c
+  cout << "imaginary " << c.cosb(c).im << endl;
+	REQUIRE(((c.cosb(c).re == 23083.7) ));
+	REQUIRE(((c.cosb(c).im == -78034.8) ));
+
+	REQUIRE(((c.sinb(c).re == 78034.8) ));
+	REQUIRE(((c.sinb(c).im == 23083.7) ));
+	
+	REQUIRE(((c.sinhb(c).re == (-62.6)) ));
+	REQUIRE(((c.sinhb(c).im == -39.8) ));
+  REQUIRE(((c.coshb(c).re == (62.6)) ));
+	REQUIRE(((c.coshb(c).im == 39.8) ));
+	REQUIRE(((c.tan(c).re == (0)) ));
+	REQUIRE(((c.tan(c).im == 1) ));
+	REQUIRE(((c.tanh(c).re == -1) ));
+	REQUIRE(((c.tanh(c).im == 0) ));
+	
+
+  //test d
+  cout << d.cosb(d).im << endl;
+  REQUIRE(((d.cosb(d).re == -27) ));
+	REQUIRE(((d.cosb(d).im == 3.9) ));
+
+	REQUIRE(((d.sinb(d).re == -3.9) ));
+	REQUIRE(((d.sinb(d).im == -27) ));
+	
+	REQUIRE(((d.sinhb(d).re == (6.5)) ));
+	REQUIRE(((d.sinhb(d).im == -7.6) ));
+  REQUIRE(((d.coshb(d).re == (-6.6)) ));
+	REQUIRE(((d.coshb(d).im == 7.6) ));
+	REQUIRE(((d.tan(d).re == (0)) ));
+	REQUIRE(((d.tan(d).im == 1) ));
+	REQUIRE(((d.tanh(d).re == -1) ));
+	REQUIRE(((d.tanh(d).im == 0) ));
+
+	Complex e(-15, -8);
+	cout << e.tanh(e).re << endl;
+    
+	REQUIRE(((e.cosb(e).re == -1132.3)));
+	REQUIRE(((e.cosb(e).im == -969.2)));
+	REQUIRE(((e.sinb(e).re == -969.2) ));
+	REQUIRE(((e.sinb(e).im == 1132.3) ));
+	REQUIRE(((e.sinhb(e).re == (237821.1)) ));
+	REQUIRE(((e.sinhb(e).im == -1617114.6) ));
+    REQUIRE(((e.coshb(e).re == (-237821.1)) ));
+	REQUIRE(((e.coshb(e).im == 1617114.6) ));
+	REQUIRE(((e.tan(e).re == (0)) ));
+	REQUIRE(((e.tan(e).im == -1) ));
+	REQUIRE(((e.tanh(e).re == -1) ));
+	REQUIRE(((e.tanh(e).im == 0) ));
+	
+
 }
 // */
 #endif  //ifndef CATCH_AMALGAMATED_CUSTOM_MAIN
