@@ -51,10 +51,38 @@ TEST_CASE("Quick Catch2 test on Factorial", "[Factorial]")
 	REQUIRE(((a * b).im == 56));
 	REQUIRE(((a / b).re == 63.0/25));
 	REQUIRE(((a / b).im == 16.0/25));
-	cout<<a.cosb(a).re<<endl;
-	REQUIRE(((a.cosb(a).re == 23083.69) ));
-	cout<<a.cosb(a).im<<endl;
-		REQUIRE(((a.cosb(a).im == 78034.76) ));
+
+	REQUIRE(((a.cosb(a).re == 23083.7) ));
+	REQUIRE(((a.cosb(a).im == 78034.8) ));
+
+	REQUIRE(((a.sinb(a).re == -78034.8) ));
+	REQUIRE(((a.sinb(a).im == 23083.7) ));
+		
+
+	REQUIRE(((a.sinhb(a).re == (62.6)) ));
+	REQUIRE(((a.sinhb(a).im == -39.8) ));
+	REQUIRE(((a.tan(a).re == (0)) ));
+	REQUIRE(((a.tan(a).im == 1) ));
+	REQUIRE(((a.tanh(a).re == 1) ));
+	REQUIRE(((a.tanh(a).im == 0) ));
+
+	//make b
+	cout << b.cosb(b).re << endl;
+	REQUIRE(((b.cosb(b).re == -80563.0) ));
+	REQUIRE(((b.cosb(b).im == -11484.0) ));
+
+	REQUIRE(((b.sinb(b).re == 11484.0) ));
+	REQUIRE(((b.sinb(b).im == -80563.0) ));
+	
+
+	REQUIRE(((b.sinhb(b).re == (8.5)) ));
+	REQUIRE(((b.sinhb(b).im == -5.4) ));
+	REQUIRE(((b.tan(b).re == (0)) ));
+	REQUIRE(((b.tan(b).im == 1) ));
+	/**REQUIRE(((b.tanh(b).re == 1) ));
+	REQUIRE(((b.tanh(b).im == 0) ));
+	
+**/
 
 
 	Complex c(-5,12);

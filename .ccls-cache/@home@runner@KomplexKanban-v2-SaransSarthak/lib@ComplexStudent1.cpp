@@ -28,9 +28,13 @@ Complex::Complex()
 Complex::Complex(double real, double imag) 
 {
   // Constructor code
+	
 		re = real;
 		im = imag;
-}
+
+	
+		}
+
 
 //  ostream& operator << (ostream& out, const Complex& c) {
 //   out << c.re << " + " << c.im << "i" << endl;
