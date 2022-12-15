@@ -62,6 +62,11 @@ int main () {
     cout << "cos(a) = " << cos(a) << "\n";
     cout << "tan(a) = " << tan(a) << "\n\n";
 
+    cout << "sinh(b) = " << sinh(b) << "\n";
+    cout << "cosh(b) = " << cosh(b) << "\n";
+    cout << "tanh(b) = " << tanh(b) << "\n\n";
+
+    
     // cout << "The asin is: " << asin(a) << "\n";
     // cout << "The acos is: " << acos(a) << "\n";
     // cout << "The atan is: " << atan(a) << "\n";
