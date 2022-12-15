@@ -1,14 +1,14 @@
 /*
 
-  Compile with: g++ main.cpp ../src/fac.cpp catch_amalgamated
-  Runn with ./a.out
+  Compile with: g++ main.cpp ../src/facpp catch_amalgamated
+  Runn with ./out
 
 */
 
 //#define CATCH_CONFIG_RUNNER
 //#define CATCH_AMALGAMATED_CUSTOM_MAIN
 #include "../include/Complex.h"
-#include "../src/fac.h"
+// #include "../src/fah"
 #include "catch_amalgamated.hpp"
 #include <iostream>
 using namespace std;
@@ -38,8 +38,8 @@ TEST_CASE("Quick Catch2 test on Arithmetic Functions", "[Factorial]") {
   // REQUIRE(Factorial(5) == 120);
   Complex a(5, 12);
   Complex b(3, 4);
-  REQUIRE(a.abs(a) == 13.0);
-  REQUIRE(b.abs(b) == 5.0);
+  REQUIRE(abs(a) == 13.0);
+  REQUIRE(abs(b) == 5.0);
   REQUIRE(((a + b).im == 16));
   REQUIRE(((a + b).re == 8));
   REQUIRE(((a - b).im == 8));
@@ -48,35 +48,34 @@ TEST_CASE("Quick Catch2 test on Arithmetic Functions", "[Factorial]") {
   REQUIRE(((a * b).im == 56));
   REQUIRE(((a / b).re == 63.0 / 25));
   REQUIRE(((a / b).im == 16.0 / 25));
-  REQUIRE(((a.cosb(a).re == 23083.7)));
-  REQUIRE(((a.cosb(a).im == 78034.8)));
-  REQUIRE(((a.sinb(a).re == -78034.8)));
-  REQUIRE(((a.sinb(a).im == 23083.7)));
-  REQUIRE(((a.sinhb(a).re == (62.6))));
-  REQUIRE(((a.sinhb(a).im == -39.8)));
-  REQUIRE(((a.coshb(a).re == (62.6))));
-  REQUIRE(((a.coshb(a).im == -39.8)));
-  REQUIRE(((a.tan(a).re == (0))));
-  REQUIRE(((a.tan(a).im == 1)));
-  REQUIRE(((a.tanh(a).re == 1)));
-  REQUIRE(((a.tanh(a).im == 0)));
+  REQUIRE(((cos(a).re == 23083.7)));
+  REQUIRE(((cos(a).im == 78034.8)));
+  REQUIRE(((sin(a).re == -78034.8)));
+  REQUIRE(((sin(a).im == 23083.7)));
+  REQUIRE(((sinh(a).re == (62.6))));
+  REQUIRE(((sinh(a).im == -39.8)));
+  REQUIRE(((cosh(a).re == (62.6))));
+  REQUIRE(((cosh(a).im == -39.8)));
+  REQUIRE(((tan(a).re == (0))));
+  REQUIRE(((tan(a).im == 1)));
+  REQUIRE(((tanh(a).re == 1)));
+  REQUIRE(((tanh(a).im == 0)));
 
   // make b
-
-  REQUIRE(((b.cosb(b).re == -27)));
-  REQUIRE(((b.cosb(b).im == -3.9)));
-  REQUIRE(((b.sinb(b).re == 3.9)));
-  REQUIRE(((b.sinb(b).im == -27)));
-  REQUIRE(((b.sinhb(b).re == (-6.5))));
-  REQUIRE(((b.sinhb(b).im == -7.6)));
-  REQUIRE(((b.coshb(b).re == (-6.6))));
-  REQUIRE(((b.coshb(b).im == -7.6)));
-  REQUIRE(((b.tan(b).re == (0))));
-  REQUIRE(((b.tan(b).im == 1)));
-  REQUIRE(((b.tanh(b).re == 1)));
-  REQUIRE(((b.tanh(b).im == 0)));
-  REQUIRE(a.abs(a) == 13.0);
-  REQUIRE(b.abs(b) == 5.0);
+  REQUIRE(((cos(b).re == -27)));
+  REQUIRE(((cos(b).im == -3.9)));
+  REQUIRE(((sin(b).re == 3.9)));
+  REQUIRE(((sin(b).im == -27)));
+  REQUIRE(((sinh(b).re == (-6.5))));
+  REQUIRE(((sinh(b).im == -7.6)));
+  REQUIRE(((cosh(b).re == (-6.6))));
+  REQUIRE(((cosh(b).im == -7.6)));
+  REQUIRE(((tan(b).re == (0))));
+  REQUIRE(((tan(b).im == 1)));
+  REQUIRE(((tanh(b).re == 1)));
+  REQUIRE(((tanh(b).im == 0)));
+  REQUIRE(abs(a) == 13.0);
+  REQUIRE(abs(b) == 5.0);
 	
   Complex c(-5, 12);
   Complex d(-3, 4);
@@ -88,53 +87,51 @@ TEST_CASE("Quick Catch2 test on Arithmetic Functions", "[Factorial]") {
   REQUIRE(((c * d).im == -56));
   REQUIRE(((c / d).re == 63.0 / 25));
   REQUIRE(((c / d).im == -16.0 / 25));
-  REQUIRE(c.arg(c) == -67.38);
+  REQUIRE(arg(c) == -67.38);
 
   // test c
-  REQUIRE(((c.cosb(c).re == 23083.7)));
-  REQUIRE(((c.cosb(c).im == -78034.8)));
-  REQUIRE(((c.sinb(c).re == 78034.8)));
-  REQUIRE(((c.sinb(c).im == 23083.7)));
-  REQUIRE(((c.sinhb(c).re == (-62.6))));
-  REQUIRE(((c.sinhb(c).im == -39.8)));
-  REQUIRE(((c.coshb(c).re == (62.6))));
-  REQUIRE(((c.coshb(c).im == 39.8)));
-  REQUIRE(((c.tan(c).re == (0))));
-  REQUIRE(((c.tan(c).im == 1)));
-  REQUIRE(((c.tanh(c).re == -1)));
-  REQUIRE(((c.tanh(c).im == 0)));
+  REQUIRE(((cos(c).re == 23083.7)));
+  REQUIRE(((cos(c).im == -78034.8)));
+  REQUIRE(((sin(c).re == 78034.8)));
+  REQUIRE(((sin(c).im == 23083.7)));
+  REQUIRE(((sinh(c).re == (-62.6))));
+  REQUIRE(((sinh(c).im == -39.8)));
+  REQUIRE(((cosh(c).re == (62.6))));
+  REQUIRE(((cosh(c).im == 39.8)));
+  REQUIRE(((tan(c).re == (0))));
+  REQUIRE(((tan(c).im == 1)));
+  REQUIRE(((tanh(c).re == -1)));
+  REQUIRE(((tanh(c).im == 0)));
 
   // test d
-  REQUIRE(((d.cosb(d).re == -27)));
-  REQUIRE(((d.cosb(d).im == 3.9)));
-
-  REQUIRE(((d.sinb(d).re == -3.9)));
-  REQUIRE(((d.sinb(d).im == -27)));
-
-  REQUIRE(((d.sinhb(d).re == (6.5))));
-  REQUIRE(((d.sinhb(d).im == -7.6)));
-  REQUIRE(((d.coshb(d).re == (-6.6))));
-  REQUIRE(((d.coshb(d).im == 7.6)));
-  REQUIRE(((d.tan(d).re == (0))));
-  REQUIRE(((d.tan(d).im == 1)));
-  REQUIRE(((d.tanh(d).re == -1)));
-  REQUIRE(((d.tanh(d).im == 0)));
+  REQUIRE(((cos(d).re == -27)));
+  REQUIRE(((cos(d).im == 3.9)));
+  REQUIRE(((sin(d).re == -3.9)));
+  REQUIRE(((sin(d).im == -27)));
+  REQUIRE(((sinh(d).re == (6.5))));
+  REQUIRE(((sinh(d).im == -7.6)));
+  REQUIRE(((cosh(d).re == (-6.6))));
+  REQUIRE(((cosh(d).im == 7.6)));
+  REQUIRE(((tan(d).re == (0))));
+  REQUIRE(((tan(d).im == 1)));
+  REQUIRE(((tanh(d).re == -1)));
+  REQUIRE(((tanh(d).im == 0)));
 
 	
   // test e
   Complex e(-15, -8);
-  REQUIRE(((e.cosb(e).re == -1132.3)));
-  REQUIRE(((e.cosb(e).im == -969.2)));
-  REQUIRE(((e.sinb(e).re == -969.2)));
-  REQUIRE(((e.sinb(e).im == 1132.3)));
-  REQUIRE(((e.sinhb(e).re == (237821.1))));
-  REQUIRE(((e.sinhb(e).im == -1617114.6)));
-  REQUIRE(((e.coshb(e).re == (-237821.1))));
-  REQUIRE(((e.coshb(e).im == 1617114.6)));
-  REQUIRE(((e.tan(e).re == (0))));
-  REQUIRE(((e.tan(e).im == -1)));
-  REQUIRE(((e.tanh(e).re == -1)));
-  REQUIRE(((e.tanh(e).im == 0)));
+  REQUIRE(((cos(e).re == -1132.3)));
+  REQUIRE(((cos(e).im == -969.2)));
+  REQUIRE(((sin(e).re == -969.2)));
+  REQUIRE(((sin(e).im == 1132.3)));
+  REQUIRE(((sinh(e).re == (237821.1))));
+  REQUIRE(((sinh(e).im == -1617114.6)));
+  REQUIRE(((cosh(e).re == (-237821.1))));
+  REQUIRE(((cosh(e).im == 1617114.6)));
+  REQUIRE(((tan(e).re == (0))));
+  REQUIRE(((tan(e).im == -1)));
+  REQUIRE(((tanh(e).re == -1)));
+  REQUIRE(((tanh(e).im == 0)));
 }
 // */
 #endif // ifndef CATCH_AMALGAMATED_CUSTOM_MAIN
@@ -147,20 +144,20 @@ TEST_CASE("Quick Catch2 test on Arithmetic Functions", "[Factorial]") {
 // override CXXFLAGS += -g -Wno-everything
 
 // SRCS := $(wildcard src/*.cpp)
-// SRCS := $(filter-out catch_amalgamated.cpp, $(SRCS))
+// SRCS := $(filter-out catch_amalgamatecpp, $(SRCS))
 // TESTS := $(wildcard *.cpp)
-// TESTS := $(filter-out catch_amalgamated.cpp, $(TESTS))
+// TESTS := $(filter-out catch_amalgamatecpp, $(TESTS))
 // HEADERS := $(wildcard *.h*)
-// HEADERS := $(filter-out catch_amalgamated.hpp, $(HEADERS))
+// HEADERS := $(filter-out catch_amalgamatehpp, $(HEADERS))
 
-// main: $(TESTS) ../src/fac.cpp ../src/fac.h $(HEADERS)
-// 	$(CXX) $(CXXFLAGS) $(TESTS) ../src/fac.cpp catch_amalgamated -o "$@"
+// main: $(TESTS) ../src/facpp ../src/fah $(HEADERS)
+// 	$(CXX) $(CXXFLAGS) $(TESTS) ../src/facpp catch_amalgamated -o "$@"
 
 // main-debug: $(SRCS) $(HEADERS)
 // 	$(CXX) $(CXXFLAGS) -O0 $(SRCS) -o "$@"
 
-// catch_amalgamated: catch_amalgamated.cpp catch_amalgamated.hpp
-// 	$(CXX) $(CXXFLAGS) -O0 -c catch_amalgamated.cpp -o "$@"
+// catch_amalgamated: catch_amalgamatecpp catch_amalgamatehpp
+// 	$(CXX) $(CXXFLAGS) -O0 -c catch_amalgamatecpp -o "$@"
 
 // clean:
 // 	rm -f main main-debug
