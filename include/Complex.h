@@ -1,9 +1,3 @@
-// Skip to content
-// Search or jump to…
-// Pull requests
-// Issues
-// Codespaces
-
 /*
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Title : Complex
@@ -29,12 +23,29 @@ public:
   double im = 0;
 
   //----------------------------------------- OPERATOR OVERLOADS -----------------------------------------------------
+    /**
+     * Prints an imaginary number object to the standard output (console)
+     * @param ostream object to access standard input/output stream and Complex number to be printed
+     * @return ostream object
+     * @author Aaditya Bhat
+     */
   friend ostream& operator << (ostream&, const Complex&);
+
+
+    /**
+     * Receives an imaginary number object from the standard input (console)
+     * @param istream object to access standard input/output stream and Complex number to be received from console
+     * @return istream object
+     * @author Sathvik Chemudupati
+     */
   friend istream& operator >> (istream&, Complex&);
+
+
   Complex();
+  Complex(double real, double imag);
 
   //------------------------------------- ARITHMETIC LIBRARY FUNCTIONS -------------------------------------------
-  Complex(double real, double imag);
+
 
     /**
      * Returns the imaginary part of complex number
@@ -85,7 +96,7 @@ public:
      * Returns the polar of complex number as per a magnitude & angle
      * @param Magnitude & Angle of a complex number
      * @return Complex
-     * @author 
+     * @author Alex Huang, Sarthak Sarans
      */
   friend Complex polar(double mag, double angle);
 

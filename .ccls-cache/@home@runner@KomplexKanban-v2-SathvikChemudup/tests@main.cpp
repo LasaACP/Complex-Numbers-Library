@@ -136,28 +136,3 @@ TEST_CASE("Quick Catch2 test on Arithmetic Functions", "[Factorial]") {
 // */
 #endif // ifndef CATCH_AMALGAMATED_CUSTOM_MAIN
 
-// SHELL = /bin/sh
-
-// all: main
-
-// CXX = clang++
-// override CXXFLAGS += -g -Wno-everything
-
-// SRCS := $(wildcard src/*.cpp)
-// SRCS := $(filter-out catch_amalgamatecpp, $(SRCS))
-// TESTS := $(wildcard *.cpp)
-// TESTS := $(filter-out catch_amalgamatecpp, $(TESTS))
-// HEADERS := $(wildcard *.h*)
-// HEADERS := $(filter-out catch_amalgamatehpp, $(HEADERS))
-
-// main: $(TESTS) ../src/facpp ../src/fah $(HEADERS)
-// 	$(CXX) $(CXXFLAGS) $(TESTS) ../src/facpp catch_amalgamated -o "$@"
-
-// main-debug: $(SRCS) $(HEADERS)
-// 	$(CXX) $(CXXFLAGS) -O0 $(SRCS) -o "$@"
-
-// catch_amalgamated: catch_amalgamatecpp catch_amalgamatehpp
-// 	$(CXX) $(CXXFLAGS) -O0 -c catch_amalgamatecpp -o "$@"
-
-// clean:
-// 	rm -f main main-debug
